@@ -61,7 +61,7 @@ public class FMRadio {
 		}else {
 			onOff = "Off";
 		}
-		return  "Status: " + onOff + '\n' + "Volume: " + volume + '\n' + " Frequency: " + frequency; 
+		return  "Status: " + onOff + '\n' + "Volume: " + volume +  " Frequency: " + frequency; 
 
 	}
 	
