@@ -3,15 +3,26 @@ public class FMRadio {
 		// TODO Auto-generated method stub
 	boolean status;
 	int volume;
-	double frequency; 
+	double frequency;
+    final int MIN_VOLUME = 0;
+    final int MAX_VOLUME = 40;
+    final double MIN_MHZ = 88;
+    final double MAX_MHZ = 108;
+    
 	
 	
-	public FMRadio(boolean status, int volume, double frequency){
-		this.status = status;
-		this.volume = volume;
-		this.frequency = frequency; 
+	public FMRadio(boolean rStatus, int rVolume, double rFrequency){
+		status = rStatus;
+		
+		if(rVolume >= MIN_VOLUME && rVolume <= MAX_VOLUME) { 
+			volume = rVolume;
+	    }
+		if(rFrequency >= MIN_MHZ && rFrequency <= MAX_MHZ) { 
+				frequency = rFrequency;
+		}
 	}
-	 	
+	
+	
 	public FMRadio() {
 	}
 	
@@ -29,23 +40,31 @@ public class FMRadio {
 	
 	
 	public void setVolume(){ //is this supposed to take parameters 
-	  volume++;
+	  if(status = true) {
+		  volume++;
+	  }
 	}
 	public void setVolume(int newVol){ 
-      volume = newVol;
+		if(status = true) {
+		   volume = newVol;
+		}
 	}	
 
-	
+
 	public int getVolume(){
 	 return volume;
 	}
 	
 	public void setFrequency(double value) {
+		if(status = true) {
 		frequency = value; 
+		}
 	}
 	
 	public void setFrequency() {
-		frequency++; 
+		if(status = true) {
+			frequency+= 0.1; 
+		}
 	}
 	
 	public double getFrequency(){
@@ -61,7 +80,7 @@ public class FMRadio {
 		}else {
 			onOff = "Off";
 		}
-		return  "Status: " + onOff + '\n' + "Volume: " + volume +  " Frequency: " + frequency; 
+		return  "Status: " + onOff + '\n' + "Volume: " + volume +  '\n' + "Frequency: " + frequency; 
 
 	}
 	
